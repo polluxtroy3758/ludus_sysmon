@@ -19,4 +19,12 @@
   ansible.builtin.unarchive:
     src: "{{ ludus_sysmon_zip_host_path }}"
     dest: "{{ ludus_sysmon_host_path }}"
-    creates: "{{ ludus_sysmon_zip_host_files_created }}"
+
+- name: Install Sysmon
+  ansible.builtin.win_command:
+    argv:
+      - "{{ ludus_sysmon_host_path }}\\Sysmon64.exe"
+      - -accepteula
+      - -i
+      - -c
+      - "{{ ludus_sysmon_host_path }}\\sysmonconfig.xml"
