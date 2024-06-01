@@ -4,8 +4,3 @@
 ludus_sysmon_config_file_url: "https://github.com/olafhartong/sysmon-modular/raw/master/sysmonconfig.xml"
 ludus_sysmon_host_path: "C:\\ludus\\sysmon"
 ludus_sysmon_zip_host_path: "{{ ludus_sysmon_host_path }}\\Sysmon.zip"
-ludus_sysmon_zip_host_files_created: 
-  - "Eula.txt"
-  - "Sysmon.exe"
-  - "Sysmon64.exe"
-  - "Sysmon64a.exe"
