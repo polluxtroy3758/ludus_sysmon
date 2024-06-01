@@ -16,8 +16,7 @@
     ludus_download_file_host_path: "{{ ludus_sysmon_host_path }}"
 
 - name: Unzip Sysmon.zip
-  ansible.builtin.unarchive:
-    remote_src: true
+  community.windows.win_unzip:
     src: "{{ ludus_sysmon_zip_host_path }}"
     dest: "{{ ludus_sysmon_host_path }}"
 
