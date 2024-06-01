@@ -26,5 +26,4 @@
       - "{{ ludus_sysmon_host_path }}\\Sysmon64.exe"
       - -accepteula
       - -i
-      - -c
       - "{{ ludus_sysmon_host_path }}\\sysmonconfig.xml"
