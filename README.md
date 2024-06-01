@@ -11,7 +11,7 @@ None.
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
     # This is a comment explaining the variable below
-    ludus_thing_variable1: true
+    ludus_sysmon_config_file_url: "https://github.com/olafhartong/sysmon-modular/raw/master/sysmonconfig.xml"
 
 ## Dependencies
 
