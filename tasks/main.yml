@@ -19,11 +19,9 @@
   community.windows.win_unzip:
     src: "{{ ludus_sysmon_zip_host_path }}"
     dest: "{{ ludus_sysmon_host_path }}"
+    creates: "{{ ludus_sysmon_host_path }}\\Sysmon64.exe"
 
 - name: Install Sysmon
   ansible.builtin.win_command:
-    argv:
-      - "{{ ludus_sysmon_host_path }}\\Sysmon64.exe"
-      - -accepteula
-      - -i
-      - "{{ ludus_sysmon_host_path }}\\sysmonconfig.xml"
+    cmd: ".\\Sysmon64.exe -i sysmonconfig.xml -accepteula"
+    chdir: "{{ ludus_sysmon_host_path }}"
