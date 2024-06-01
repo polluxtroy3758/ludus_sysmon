@@ -1,0 +1,10 @@
+---
+# Role variables should all be prefaced with the name of the role to avoid
+# name conflicts with other roles
+ludus_sysmon_host_path: "C:\\ludus\\sysmon"
+ludus_sysmon_zip_host_path: "{{ ludus_sysmon_host_path }}\\Sysmon.zip"
+ludus_sysmon_zip_host_pathfiles: 
+  - "Eula.txt"
+  - "Sysmon.exe"
+  - "Sysmon64.exe"
+  - "Sysmon64a.exe"

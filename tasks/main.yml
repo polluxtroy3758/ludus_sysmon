@@ -1,0 +1,22 @@
+---
+- name: Download sysmonconfig.xml
+  ansible.builtin.include_tasks:
+    file: download_file.yml
+  vars:
+    ludus_download_file_name: sysmonconfig.xml
+    ludus_download_file_url: https://github.com/olafhartong/sysmon-modular/raw/master/sysmonconfig.xml
+    ludus_download_file_host_path: "C:\\ludus\\sysmon"
+
+- name: Download Sysmon.zip
+  ansible.builtin.include_tasks:
+    file: download_file.yml
+  vars:
+    ludus_download_file_name: Sysmon.zip
+    ludus_download_file_url: https://download.sysinternals.com/files/Sysmon.zip
+    ludus_download_file_host_path: "C:\\ludus\\sysmon"
+
+- name: Unzip Sysmon.zip
+  ansible.builtin.unarchive:
+    src: "{{ ludus_sysmon_zip_host_path }}"
+    dest: "{{ ludus_sysmon_host_path }}"
+    creates: "{{ ludus_sysmon_zip_host_files_created }}"
