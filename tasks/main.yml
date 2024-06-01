@@ -17,6 +17,7 @@
 
 - name: Unzip Sysmon.zip
   ansible.builtin.unarchive:
+    remote_src: true
     src: "{{ ludus_sysmon_zip_host_path }}"
     dest: "{{ ludus_sysmon_host_path }}"
 
